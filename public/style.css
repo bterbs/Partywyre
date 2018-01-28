@@ -1,0 +1,35 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  background-color: #0B0004;
+  font-size: 16px;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
+
+
+/* Styling for navigation bar */
+
+.title-nav {
+  padding-left: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-btn {
+  text-align: right
+}
+
+nav {
+  background-color: black;
+  color: white;
+  margin-left: 50px;
+}
+
+/* Styling for main body form */
+
+.code-word-form {
+  margin-left: 200px;
+  padding-top: 100px;
+}

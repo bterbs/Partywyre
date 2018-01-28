@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
-  res.send('Partywyre coming soon!')
+  return res.render('events/index.ejs')
 })
 
 
