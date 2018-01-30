@@ -9,9 +9,10 @@
   "scripts": {
     "start": "nodemon src/app.js",
     "start:dev": "nodemon src/app.js",
+    "db:drop": "dropdb --if-exists partywyreDb",
+    "db:create": "psql -d partywyreDb < src/models/db/schema.sql",
     "db:reset": "dropdb partywyreDb && createdb partywyreDb && npm run load_schema",
-    "load_schema": "psql -d partywyreDb < src/models/db/schema.sql",
-    "test": "test"
+    "test": "mocha --recursive --exit ./test"
   },
   "repository": {
     "type": "git",

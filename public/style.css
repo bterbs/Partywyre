@@ -12,13 +12,9 @@ html, body{
 /* Styling for navigation bar */
 
 .title-nav {
-  padding-left: 30px;
+  padding-left: 10px;
   display: flex;
   justify-content: space-between;
-}
-
-#login-btn {
-  text-align: right
 }
 
 nav {
@@ -26,6 +22,13 @@ nav {
   color: white;
   margin-left: 50px;
 }
+
+#login-btn {
+  text-align: right;
+  font-family: 'Roboto Slab', serif;
+}
+
+
 
 /* Styling for main body form */
 
