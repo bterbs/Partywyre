@@ -9,7 +9,8 @@ router.post('/', (req, res, next) => {
   const password = req.body.password
   doesPasswordExist(password)
     .then((event) => {
-      console.log(event);
+      console.log(event)
+      return res.render('events/eventRabbit.ejs', {})
     })
     .catch(console.error)
 })
