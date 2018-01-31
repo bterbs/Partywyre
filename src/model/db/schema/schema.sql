@@ -12,6 +12,7 @@ CREATE TABLE admin_users (
 CREATE TABLE events (
   event_id SERIAL PRIMARY KEY,
   event_password VARCHAR(255),
+  event_time VARCHAR(255),
   event_location VARCHAR(255),
-  event_notes VARCHAR(255)
+  event_artists VARCHAR(255)
 );

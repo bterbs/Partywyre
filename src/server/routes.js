@@ -9,7 +9,7 @@ router.post('/', (req, res, next) => {
   const password = req.body.password
   doesPasswordExist(password)
     .then((event) => {
-      console.log(event)
+      console.log(`the party location is ${event.event_location}`)
       return res.render('events/eventRabbit.ejs', {})
     })
     .catch(console.error)

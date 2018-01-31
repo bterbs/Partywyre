@@ -11,9 +11,9 @@
     "start:dev": "nodemon src/app.js",
     "db:drop": "dropdb --if-exists partywyreDb",
     "db:create": "psql -d partywyreDb < src/model/db/schema.sql",
-    "db:seed": "psql -d partywyreDb < src/model/db/seed.sql",
+    "db:seed": "psql -d partywyreDb < src/model/db/schema/seed.sql",
     "db:reset": "dropdb partywyreDb && createdb partywyreDb && npm run load_schema",
-    "load_schema": "psql -d partywyreDb < src/model/db/schema.sql",
+    "load_schema": "psql -d partywyreDb < src/model/db/schema/schema.sql",
     "test": "mocha --recursive --exit ./test"
   },
   "repository": {

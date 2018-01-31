@@ -1,5 +1,5 @@
 
 INSERT INTO
-  events (event_password, event_location, event_notes)
+  events (event_password, event_time, event_location, event_artists)
 VALUES
-  ('rabbit', 'Oakland', 'From 2am til sunrise. BYOB. Perfomances by BrittanyFromEarlier and friends.')
+  ('rabbit','From 2am til sunrise. BYOB.', '46 Minna St, San Francisco, CA 94105', 'BrittanyFromEarlier, Special Guest')
