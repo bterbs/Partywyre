@@ -28,7 +28,8 @@
   "homepage": "https://github.com/bterbs/Partywyre#readme",
   "dependencies": {
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "pg-promise": "^7.4.1"
   },
   "devDependencies": {
     "eslint": "^4.4.1",
