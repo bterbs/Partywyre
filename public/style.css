@@ -11,6 +11,11 @@ html, body{
 
 /* Styling for navigation bar */
 
+#nav-logo {
+  text-decoration: none;
+  color: deeppink;
+}
+
 .title-nav {
   padding-left: 10px;
   display: flex;

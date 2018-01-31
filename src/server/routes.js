@@ -10,7 +10,7 @@ router.post('/', (req, res, next) => {
   doesPasswordExist(password)
     .then((event) => {
       console.log(`the party location is ${event.event_location}`)
-      return res.render('events/eventRabbit.ejs', {})
+      return res.render('events/eventRabbit.ejs', {time: event.event_time, location: event.event_location, artists: event.event_artists})
     })
     .catch(console.error)
 })
