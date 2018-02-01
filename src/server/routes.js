@@ -19,4 +19,8 @@ router.post('/', (req, res, next) => {
     .catch(console.error)
 })
 
+router.get('/new', (req, res, next) => {
+  return res.render('events/newEvent.ejs')
+})
+
 module.exports = router;

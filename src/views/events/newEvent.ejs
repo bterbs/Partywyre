@@ -1,0 +1,37 @@
+<%- include ../partials/header.ejs %>
+
+
+  <div class="new-event-form">
+    <form action="/new" method="POST">
+      <h3 style="color:deeppink">Add a new event:</h3></br>
+        <table cellspacing="20">
+          <tr>
+            <td>
+              Create Private Code:</br>
+              <input type="text" name="password" style="margin-top:10px;" required>
+            </td>
+            <td>
+              Set Event Time:</br>
+              <input type="text" name="time" style="margin-top:10px;" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Enter Address:</br>
+              <input type="text" name="location" style="margin-top:10px;" required></br>
+            </td>
+            <td>
+              List Entertainment:</br>
+              <input type="text" name="artists" style="margin-top:10px;" required></br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" style="margin-top:10px" id="passwordSubmitBtn">
+            </td>
+          </tr>
+        </table>
+    </form>
+  </div>
+
+<%- include ../partials/footer.ejs %>

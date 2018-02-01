@@ -16,6 +16,11 @@ html, body{
   color: deeppink;
 }
 
+#nav-image {
+  height: 75px;
+  width: 75px;
+}
+
 .title-nav {
   padding-left: 10px;
   display: flex;
@@ -35,9 +40,16 @@ nav {
 
 
 
-/* Styling for main body form */
+/* Styling for index.ejs form */
 
 .code-word-form {
+  color: white;
+  margin-left: 200px;
+  padding-top: 100px;
+  font-size: 16px;
+}
+
+.new-event-form {
   color: white;
   margin-left: 200px;
   padding-top: 100px;
@@ -48,8 +60,17 @@ input {
   font-family: 'Roboto Slab', serif;
 }
 
-
 #event-container {
   text-align: center;
   margin-top: 100px;
+}
+
+/* Styling for new event form */
+
+table input {
+  background-color: pink;
+}
+
+#passwordSubmitBtn {
+  background-color: white;
 }
