@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const doesPasswordExist = require('../model/db/events.js')
+const { doesPasswordExist, addEvent } = require('../model/db/events.js')
 
 router.get('/', (req, res, next) => {
   return res.render('events/index.ejs', {message:'There\'s a party tonight!'})
@@ -21,6 +21,18 @@ router.post('/', (req, res, next) => {
 
 router.get('/new', (req, res, next) => {
   return res.render('events/newEvent.ejs')
+})
+
+router.post('/new', (req, res, next) => {
+  const {password, time, location, artists} = req.body
+  addEvent(password, time, location, artists)
+    .then((event) => {
+      return res.render('events/thankyou.ejs', {password: event.event_password})
+    })
+})
+
+router.get('/thankyou', (req, res, next) => {
+  return res.render('events/thankyou', {password: ""})
 })
 
 module.exports = router;

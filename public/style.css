@@ -43,9 +43,14 @@ nav {
 /* Styling for index.ejs form */
 
 .code-word-form {
-  color: white;
-  margin-left: 200px;
+  text-align: center;
+  color: deeppink;
+  /*margin-left: 200px; */
   padding-top: 100px;
+  font-size: 20px;
+}
+
+.code-word-form #passwordSubmitBtn {
   font-size: 16px;
 }
 
@@ -73,4 +78,16 @@ table input {
 
 #passwordSubmitBtn {
   background-color: white;
+}
+
+/* Styling for thank you page */
+
+#thank-you {
+  margin-top: 100px;
+  color: white;
+  text-align: center;
+}
+
+#thank-you h3 {
+  color: deeppink;
 }

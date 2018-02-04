@@ -16,4 +16,25 @@ const doesPasswordExist = function(password) {
     });
 }
 
-module.exports = doesPasswordExist
+const addEvent = function(password, time, location, artists) {
+  return db.one(`
+    INSERT INTO
+      events
+        (event_password, event_time, event_location, event_artists)
+    VALUES
+      ($1, $2, $3, $4)
+      RETURNING *
+      `,
+      [password, time, location, artists]
+    )
+    .catch(error => {
+      console.error({message: 'Error occurred while executing addEvent',
+                     arguments: arguments});
+      throw error
+    })
+}
+
+module.exports = {
+  doesPasswordExist,
+  addEvent
+}
