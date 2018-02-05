@@ -19,6 +19,14 @@ router.post('/', (req, res, next) => {
     .catch(console.error)
 })
 
+router.get('/login', (req, res, next) =>{
+  res.render('events/login')
+})
+
+router.post('/login', (req, res) => {
+  const {username, password} = req.body
+})
+
 router.get('/new', (req, res, next) => {
   return res.render('events/newEvent.ejs')
 })
