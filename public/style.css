@@ -70,6 +70,43 @@ input {
   margin-top: 100px;
 }
 
+/* Styling for login page */
+
+#registration-forms {
+  background-color: deeppink;
+  border-radius: 25px;
+  color: white;
+  height: 230px;
+  margin: 0 auto;
+  width: 600px;
+}
+
+#registration-forms h3 {
+  text-align: center;
+}
+
+#login-div {
+  display:inline-block;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+#login-div input {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#signup-div {
+  display:inline-block;
+  margin-left: 170px;
+  margin-top: 10px;
+}
+
+#signup-div input {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
 /* Styling for new event form */
 
 table input {

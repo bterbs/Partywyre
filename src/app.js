@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // to serve static files
 app.use(express.static('public'))
 
-app.use('/', routes)
-
-app.use((request, response) => {
-  response.render('common/not_found')
+app.get('/login', (req, res, next) => {
+  res.render('events/login')
 })
+
+app.use('/', routes)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
