@@ -13,3 +13,9 @@ VALUES
   VALUES
     ('brittany@gmail.com', '123'),
     ('miles@gmail.com', '456');
+
+  INSERT INTO
+    users (email, password)
+  VALUES
+    ('a@gmail.com', 'aaa'),
+    ('b@gmail.com', 'bbb');

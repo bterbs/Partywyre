@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { doesPasswordExist, addEvent } = require('../model/db/events.js')
+const { find } = require('../model/db/users.js')
 
 router.get('/', (req, res, next) => {
   return res.render('events/index.ejs', {message:'There\'s a party tonight!'})
@@ -19,13 +20,22 @@ router.post('/', (req, res, next) => {
     .catch(console.error)
 })
 
+// login routes
+
 router.get('/login', (req, res, next) =>{
   res.render('events/login')
 })
 
 router.post('/login', (req, res) => {
-  const {username, password} = req.body
+  const { email, password } = req.body
+
+  find(email).then(function(user) {
+    console.log('found user::', user.email)
+    res.render('events/dashboard', {username: user.email})
+  }).catch(console.error)
 })
+
+// new event routes
 
 router.get('/new', (req, res, next) => {
   return res.render('events/newEvent.ejs')
