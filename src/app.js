@@ -12,10 +12,12 @@ app.set('views', __dirname + '/views')
 //Middleware:
 // to parse incoming requests
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cookieParser())
 
 // to serve static files
 app.use(express.static('public'))
+
+// to parse every cookie, it must be used before express-session
+app.use(cookieParser())
 
 // initialize express-session for login and pages behind authorization
 app.use(session({
