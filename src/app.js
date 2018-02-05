@@ -23,12 +23,14 @@ app.use(cookieParser())
 app.use(session({
   key: 'user_id',
   resave: false,
-  secret: 'brittany rocks',
+  secret: 'brittany',
   saveUninitialized: false,
-  cookie: {
-    expires: 60000
-  }
+  cookie: { expires: 600000 }
 }))
+
+app.get('/test', (req, res) => {
+  res.send('testing...')
+})
 
 app.use('/', routes)
 

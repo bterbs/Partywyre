@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { doesPasswordExist, addEvent } = require('../model/db/events.js')
 const { find } = require('../model/db/users.js')
+const express = require('express')
 
 // index routes
 router.get('/', (req, res, next) => {
@@ -34,17 +35,21 @@ router.post('/login', (req, res) => {
     if (!user || password != user.password) {
       res.redirect('/login')
     } else {
-      req.session.user = user.email
-      console.log(`redirecting ${req.session.user} to dashboard`);
-      res.redirect('/dashboard')
+      
+      req.session.email = user.email
+      console.log(`redirecting to dashboard, req::`, req.session);
+
+      req.session.save(function() {
+        res.render('events/dashboard', {username: 'fii'})
+      })
     }
   }).catch(console.error)
 })
 
 // dashboard route
 router.get('/dashboard', (req, res) => {
-  console.log('req:: ', req.body)
-  res.render('events/dashboard')
+  console.log('this is the req AFTER:: ', req.session)
+  res.render('events/dashboard', {username: ""})
 })
 
 // new event routes

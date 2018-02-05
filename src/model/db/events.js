@@ -34,7 +34,17 @@ const addEvent = function(password, time, location, artists) {
     })
 }
 
+const generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+};
+
+const validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+};
+
 module.exports = {
   doesPasswordExist,
-  addEvent
+  addEvent,
+  generateHash,
+  validPassword
 }
