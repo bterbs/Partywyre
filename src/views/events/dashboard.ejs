@@ -3,6 +3,9 @@
 
   <div id="dashboard">
     <h2>Welcome to your event dashboard, <%= username %></h2>
+    <form action="/new" method="GET">
+      <input type="submit" value="Throw Event" id="new-event-btn">
+    </form>
     <form action="/logout" method="GET">
       <input type="submit" value="Logout" id="logout-btn">
     </form>
