@@ -107,6 +107,12 @@ input {
   margin-bottom: 5px;
 }
 
+/* Styling for Dashboard */
+
+#dashboard {
+  text-align: center;
+}
+
 /* Styling for new event form */
 
 table input {

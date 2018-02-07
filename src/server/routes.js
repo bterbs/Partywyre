@@ -58,6 +58,7 @@ router.get('/dashboard', sessionChecker, (req, res) => {
 
 router.get('/logout', (req, res) => {
   res.clearCookie('user_id')
+  res.redirect('/login')
 })
 
 // new event routes

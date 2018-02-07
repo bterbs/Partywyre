@@ -2,11 +2,11 @@
 
 
   <div id="dashboard">
-    <h2>Welcome to your dashboard:</h2>
-    <h3><%= username %></h3>
+    <h2>Welcome to your event dashboard, <%= username %></h2>
+    <form action="/logout" method="GET">
+      <input type="submit" value="Logout" id="logout-btn">
+    </form>
   </div>
-  <div id="dashboard-btns">
-    <button type="button">Logout</button>
-  </div>
+
 
 <%- include ../partials/footer.ejs %>
