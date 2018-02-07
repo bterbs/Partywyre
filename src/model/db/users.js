@@ -16,5 +16,25 @@ const find = function(email) {
   });
 }
 
+const addUser = function(email, password) {
+  return db.one(`
+    INSERT INTO
+      users (email, password)
+    VALUES
+      ($1, $2)
+    RETURNING *
+    `,
+    [email, password]
+  )
+  .catch(error => {
+    console.error({message: 'Error occurred while executing find(email)',
+                   arguments: arguments});
+    throw error
+  });
+}
 
-module.exports = {find}
+
+module.exports = {
+  find,
+  addUser
+}

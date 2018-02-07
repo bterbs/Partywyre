@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { doesPasswordExist, addEvent } = require('../model/db/events.js')
-const { find } = require('../model/db/users.js')
+const { find, addUser } = require('../model/db/users.js')
 const { sessionChecker } = require('./middlewares')
 
 
@@ -28,10 +28,18 @@ router.post('/signup', (req, res) => {
   const { email, password } = req.body
 
   find(email).then(function(user) {
-    console.log('adding user::', user.email)
     if (!user) {
-      // write function to add user to db
-      // upon successful addition redirect to dashboard
+      console.log('adding user::', email)
+      addUser(email, password)
+        .then((newUser) => {
+          req.session.email = newUser.email
+          console.log(`redirecting to dashboard, req::`, req.session)
+
+          req.session.save(function() {
+            res.render('events/dashboard', {username: newUser.email})
+          })
+        })
+        .catch(console.error)
     } else {
       res.render('events/login', {message: 'User already exists, please log in.'})
     }
