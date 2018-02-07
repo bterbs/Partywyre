@@ -28,9 +28,6 @@ app.use(session({
   cookie: { expires: 600000 }
 }))
 
-app.get('/test', (req, res) => {
-  res.send('testing...')
-})
 
 app.use('/', routes)
 
