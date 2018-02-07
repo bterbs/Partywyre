@@ -54,12 +54,6 @@ nav {
   font-size: 16px;
 }
 
-.new-event-form {
-  color: white;
-  margin-left: 200px;
-  font-size: 16px;
-}
-
 input {
   font-family: 'Roboto Slab', serif;
 }
@@ -113,6 +107,12 @@ input {
 }
 
 /* Styling for new event form */
+
+.new-event-form {
+  color: white;
+  margin-left: 200px;
+  font-size: 16px;
+}
 
 table input {
   background-color: pink;

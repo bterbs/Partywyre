@@ -23,12 +23,27 @@ router.post('/', (req, res, next) => {
     .catch(console.error)
 })
 
+// sign-up route
+router.post('/signup', (req, res) => {
+  const { email, password } = req.body
+
+  find(email).then(function(user) {
+    console.log('adding user::', user.email)
+    if (!user) {
+      // write function to add user to db
+      // upon successful addition redirect to dashboard
+    } else {
+      res.render('events/login', {message: 'User already exists, please log in.'})
+    }
+  }).catch(console.error)
+})
+
 // login routes
 router.get('/login', (req, res, next) =>{
   if (req.session.email && req.cookies.user_id) {
     res.redirect('/dashboard')
   } else {
-  res.render('events/login')
+  res.render('events/login', {message:""})
   }
 })
 
