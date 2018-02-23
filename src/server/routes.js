@@ -41,7 +41,7 @@ router.post('/signup', (req, res) => {
         })
         .catch(console.error)
     } else {
-      res.render('events/login', {message: 'User already exists, please log in.'})
+      res.render('events/login', {message: 'User already exists, please log in.', loginMessage:""})
     }
   }).catch(console.error)
 })
@@ -51,7 +51,7 @@ router.get('/login', (req, res, next) =>{
   if (req.session.email && req.cookies.user_id) {
     res.redirect('/dashboard')
   } else {
-  res.render('events/login', {message:""})
+  res.render('events/login', {message:"", loginMessage:""})
   }
 })
 
@@ -59,11 +59,10 @@ router.post('/login', (req, res) => {
   const { email, password } = req.body
 
   find(email).then(function(user) {
-    console.log('found user::', user.email)
     if (!user || password != user.password) {
-      res.redirect('/login')
+      res.render('events/login', {loginMessage: 'User not found. Please sign up.', message:""})
     } else {
-
+      console.log('found user::', user.email)
       req.session.email = user.email
       console.log(`redirecting to dashboard, req::`, req.session);
 
