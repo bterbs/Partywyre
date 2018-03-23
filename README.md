@@ -18,3 +18,18 @@ These instructions will get a copy of the project up and running on your local m
 ### Accessing the application
 
 Log on to [http://localhost:3000](http://localhost:3000) to access the client front end. The Express server will be running on port 3000.
+
+### Using the application
+
+* Sign up, login, and create an event with a secret password. Give the password to your friends, they can enter it on the home page and get the details on the after party.
+
+## Built With
+
+* Back End
+
+  * [Node.js](https://nodejs.org)
+  * [Express](https://expressjs.com/)
+
+* Front End
+  * [EJS](http://ejs.co/)
+  * [jQuery](https://jquery.com/)
